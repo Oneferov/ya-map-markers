@@ -14,7 +14,7 @@ export default {
     async getAllMarkers({ commit }) {
       try {
         const resolve = await axios.get(
-          "http://127.0.0.1:8000/api/markers/list",
+          "https://powerful-lowlands-30938.herokuapp.com/api/markers/list",
           {
             headers: {
               Accept: "application/json; charset=utf-8",
@@ -33,7 +33,7 @@ export default {
     async addMarker({ commit }, payload) {
       try {
         const resolve = await axios.post(
-          "http://127.0.0.1:8000/api/markers/create",
+          "https://powerful-lowlands-30938.herokuapp.com/api/markers/create",
           {
             title: payload.title,
             coords: `${payload.dolgota}, ${payload.shirota}`,
@@ -50,7 +50,7 @@ export default {
     async deleteMarker({ commit, getters }, payload) {
       try {
         const resolve = await axios.delete(
-          `http://127.0.0.1:8000/api/markers/delete/${payload.id}`,
+          `https://powerful-lowlands-30938.herokuapp.com/api/markers/delete/${payload.id}`,
           {
             headers: {
               Authorization: getters.getToken,
@@ -69,7 +69,7 @@ export default {
     async editMarker({ commit, getters }, payload) {
       try {
         const resolve = await axios.put(
-          `http://127.0.0.1:8000/api/markers/put`,
+          `https://powerful-lowlands-30938.herokuapp.com/api/markers/put`,
           {
             title: payload.title,
             coords: `${payload.coords[0]}, ${payload.coords[1]}`,
@@ -92,7 +92,7 @@ export default {
 
     async retrieveToken({ commit }, payload) {
       try {
-        const resolve = await axios.post("http://127.0.0.1:8000/api/login", {
+        const resolve = await axios.post("https://powerful-lowlands-30938.herokuapp.com/api/login", {
           email: payload.email,
           password: payload.password,
         });
@@ -110,7 +110,7 @@ export default {
     async register({ commit }, payload) {
       try {
         const resolve = await axios.post(
-          "http://127.0.0.1:8000/api/registration",
+          "https://powerful-lowlands-30938.herokuapp.com/api/registration",
           {
             name: payload.name,
             email: payload.email,
